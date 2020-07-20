@@ -57,3 +57,10 @@ process.on('uncaughtException', (err) => {
     process.exit(1);
   });
 });
+
+process.on('SIGTERM', () => {
+  console.log('SIGTERM RECIEVED. shutting down gracefully');
+  server.close(() => {
+    console.log('Process terminated!');
+  });
+});
