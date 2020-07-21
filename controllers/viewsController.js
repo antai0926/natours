@@ -7,7 +7,7 @@ const Booking = require('../models/bookingModel');
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
   if (alert === 'booking') {
-    res.local.alert = `Your booking was successful! Please check your email for confirmation.
+    res.locals.alert = `Your booking was successful! Please check your email for confirmation.
        If your booking doesn't show up here immediatly, please come back later`;
   }
   next();
